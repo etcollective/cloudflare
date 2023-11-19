@@ -36,6 +36,7 @@ update:
   environment:
     name: cloudflare
     url: https://etcollective.org
+    deployment_tier: production
   only:
     refs:
       - main
