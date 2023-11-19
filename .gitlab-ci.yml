@@ -1,8 +1,8 @@
 image: pulumi/pulumi-python:latest
 
 stages:
-  - pulumi
-
+  - build
+  - deploy
 variables:
   PULUMI_STACK_NAME: explorerstheatrecollective/cloudflare/prod
   PULUMI_WORKING_DIRECTORY: .
@@ -23,16 +23,19 @@ default:
       popd
 
 preview:
-  stage: pulumi
+  stage: build
   script:
     - pulumi preview --cwd ${PULUMI_WORKING_DIRECTORY} -s ${PULUMI_STACK_NAME}
   only:
     - merge_requests
 
 update:
-  stage: pulumi
+  stage: deploy
   script:
     - pulumi up --yes --cwd ${PULUMI_WORKING_DIRECTORY} -s ${PULUMI_STACK_NAME}
+  environment:
+    name: cloudflare
+    url: https://etcollective.org
   only:
     refs:
       - main
