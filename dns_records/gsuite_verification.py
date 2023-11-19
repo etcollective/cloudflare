@@ -8,6 +8,7 @@ config = pulumi.Config('google_workspace')
 verification_host = config.require_secret('verification_host')
 verification_dest = config.require_secret('verification_dest')
 mx_records = [
+    {'priority': 1, 'value': 'ASPMX.L.GOOGLE.COM'},
     {'priority': 5, 'value': 'ALT1.ASPMX.L.GOOGLE.COM'},
     {'priority': 5, 'value': 'ALT2.ASPMX.L.GOOGLE.COM'},
     {'priority': 10, 'value': 'ALT3.ASPMX.L.GOOGLE.COM'},
