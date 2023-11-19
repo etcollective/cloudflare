@@ -1,7 +1,7 @@
 image: pulumi/pulumi-python:latest
 
 stages:
-    - pulumi
+  - pulumi
 
 variables:
   PULUMI_STACK_NAME: explorerstheatrecollective/cloudflare/prod
@@ -21,14 +21,6 @@ default:
           ${PULUMI_VENV}/bin/python -m pip install -r requirements.txt
       fi
       popd
-
-# Having problems with environment variables?
-# Uncomment the following job to see all env vars
-# exported in your GitLab Runner.
-# environment:
-#   stage: pulumi
-#   script:
-#     - export
 
 preview:
   stage: pulumi
