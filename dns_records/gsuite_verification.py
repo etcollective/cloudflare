@@ -38,12 +38,13 @@ workspace_verification = cf.Record(
 )
 
 for mx in mx_records:
+    value = mx['value']
     cf.Record(
         'google-workspace-mx-record-{}'.format(mx['value']),
         zone_id=zone.id,
-        name=verification_host,
+        name='@',
         type='MX',
-        value=mx['value'],
+        value=value.lower(),
         priority=mx['priority'],
         ttl=3600,
         opts=pulumi.ResourceOptions(parent=zone, delete_before_replace=True),
