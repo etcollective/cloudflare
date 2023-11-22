@@ -8,6 +8,6 @@ staging = cf.Record(
     zone_id=zone.id,
     type='CNAME',
     value='ghs.googlehosted.com',
-    ttl=120,
+    ttl=1,
     proxied=True,
 )
