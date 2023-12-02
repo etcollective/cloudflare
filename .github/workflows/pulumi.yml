@@ -43,13 +43,13 @@ jobs:
         with:
           command: preview
           refresh: true
-          stack-name: ${{ vars.PULUMI_STACK_NAME }}
+          stack-name: ${{ env.PULUMI_STACK_NAME }}
           work-dir: ${{ env.PULUMI_WORKING_DIRECTORY }}
 
       - name: Deploy Pulumi Update 🚀
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: pulumi/actions@v4
         with:
           command: up
-          stack-name: ${{ vars.PULUMI_STACK_NAME }}
+          stack-name: ${{ env.PULUMI_STACK_NAME }}
           work-dir: ${{ env.PULUMI_WORKING_DIRECTORY }}
