@@ -1,9 +1,6 @@
 config:
   cloudflare:apiToken:
     secure: AAABAEZ9RaMv6mq26JanfhF4USarDbvI9Ef0aLGr+XNc91X0fd5fctVp1Hrm2BHXjRnmFzCDLe7TYgMu/Q2SltWnKHBpPuAS
-  # etcollective.org:zoneId:
-  #   secure: AAABADdBYBdpoXesUWIZfL49epkB+5O8c2HTCXaO1EdBIuGap/trBeiQdiEclNlbvHoNfIUFDjqzqUtlv07WKA==
-
   google_workspace:verification_dest:
     secure: AAABAHbaaJCLPqE72zr7pPpyd92m9q2CK7DANvHuf90GOLFrFsxOpl/F1lumKHyZt5uyocFrstwJXUkSCFIrkmwvxuTC
   google_workspace:verification_host:

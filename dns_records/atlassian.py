@@ -1,7 +1,7 @@
 import pulumi
 import pulumi_cloudflare as cf
-from dns_records import zone
 
+from dns_records import zone
 
 atlassian_verification = cf.Record(
     'atlassian-verification-dns-record',
