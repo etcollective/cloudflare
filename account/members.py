@@ -1,6 +1,5 @@
 import pulumi
 import pulumi_cloudflare as cloudflare
-
 from account.account import account
 
 # Account Members
